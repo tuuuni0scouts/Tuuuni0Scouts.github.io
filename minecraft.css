@@ -28,6 +28,7 @@ p {
 body {
   background-image: url(bilder/mountain-lines-minimal-8k-a3.jpg); center ; fixed;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 .titel {
   padding-right: 95%;
