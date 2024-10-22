@@ -1,1 +1,5 @@
 /* Wiederverwendbare Komponenten (Buttons (ohne positionierung), Navigation (mit Possitionierung)) */
+.googleSeachBar {
+ border-radius: 10px; 
+ 
+}

@@ -1,1 +1,25 @@
 /* Allgemeine Styles (Reset, Typografie, Farben) */
+h1 {
+    color:  white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+  
+  }
+  h2 {
+  color:white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  }
+  p {
+  color:white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  }
+  
+  body {
+    background-image: url(/images/background1.jpg);
+    background-size: cover;
+    }  
