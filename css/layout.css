@@ -1,0 +1,22 @@
+/* Grid-System, Flexbox, Positionierung 
+z.b.
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.content {
+  padding: 20px;
+}
+
+.footer {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 20px;
+}
+*/
