@@ -1,5 +1,37 @@
 /* Wiederverwendbare Komponenten (Buttons (ohne positionierung), Navigation (mit Possitionierung)) */
 .googleSeachBar {
- border-radius: 10px; 
+ border-radius: 20px;
  
 }
+
+.menuBox {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc; /* Optional border */
+    background-color: transparent; /* Remove background color */
+    cursor: pointer; /* Change cursor to indicate clickability */
+    align-items: center;
+}
+
+.appIcon {
+    width: 50px; /* Adjust to your icon's width */
+    height: 50px; /* Adjust to your icon's height */
+    background-image: url('/images/icons/application.png'); 
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+/*
+    padding: 0;
+    height: 30px;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0,0,0,.15);
+    background-color: white;
+    font-size: 16px;
+
+*/
