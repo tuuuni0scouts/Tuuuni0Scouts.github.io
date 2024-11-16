@@ -28,3 +28,5 @@ images: Alle Bilddateien.
 css: Alle Stylesheets.
 js: Alle JavaScript-Dateien.
 fonts: Alle Schriftarten.
+
+write html and css (css separatly) for an app  
