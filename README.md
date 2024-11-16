@@ -30,3 +30,5 @@ js: Alle JavaScript-Dateien.
 fonts: Alle Schriftarten.
 
 write html and css (css separatly) for an app  
+git config --global user.name "YOUR_NAME"
+git config --global user.email "YOUR_EMAIL"
