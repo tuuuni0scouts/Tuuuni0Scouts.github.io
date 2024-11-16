@@ -11,16 +11,7 @@ $fileType = $_FILES['file']['type'];
 $fileExt = explode('.', $filename);
 $fileActualExt = strtolower(end($fileExt));
 
-$allowed = array('jpg', 'jpeg', 'png', 'TIFF');
-
-if (in_array($fileActualExt, $allowed)) {
-    if ($fileError === 0) {
-     
-       $fileNameNew = uniqid('', true). ".".$fileActualExt ;
-       $fileDestination = 'picturesdb/'.$fileNameNew;
-        move_uploaded_file($fileTmpName, $fileDestination);
-        header("Location: bilder_upload.html")
-        echo "Upload Succses"
+$allowed = array('jpg'WebseiteSuccses"
     } else {
         echo "Error whit uploading your image"
     }
