@@ -25,6 +25,8 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   }
   body {
-    background-image: url(/images/background1.jpg);
+    background-image:linear-gradient(to bottom, #070942, #0e114f, #16175d, #1e1e6b, #262579, #2f2c85, #373292, #40399f, #4b41ad, #564abc, #6152ca, #6c5bd9);
     background-repeat: no-repeat;
-    }  
+    background-size: 20000px 3000px;
+    } 
+ 
