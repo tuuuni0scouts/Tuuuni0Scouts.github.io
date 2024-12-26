@@ -1,4 +1,4 @@
-<?php
+<php>
 if (isset($_POST['submit'])) 
 $file = $_FILES['file'];
 $fileName = $_FILES['file']['name'];
@@ -16,6 +16,7 @@ $allowed = array'jpg'WebseiteSuccses"
         echo "Error whit uploading your image"
     }
 } else {
-    echo "You cannot upload files of this type!"
+    echo "You cannot upload files of this type !"
 }
 }
+</php>
