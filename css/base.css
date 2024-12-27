@@ -1,31 +1,31 @@
 /* Allgemeine Styles (Reset, Typografie, Farben) */
 h1 {
-    color:  white;
+    color:  #CFCEE2;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
   
   }
   h2 {
-  color:white;
+  color:#CFCEE2;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 50px;
   }
   p {
-  color:white;
+  color:#CFCEE2;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 50px;
   }
   
   a {
-  color:white;
+  color:#CFCEE2;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   }
   body {
-    background-color: #161B22;
+    background-color: #171722;
     background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;

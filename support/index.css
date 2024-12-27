@@ -1,5 +1,5 @@
 h1 {
-    color:  white;
+    color:  #CFCEE2;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
@@ -7,18 +7,18 @@ h1 {
   }
   .highlight1 {
     font-weight: bold;
-    color: #2dba4e ;
+    color: #6160d9 ;
   }
   
   h2 {
-  color:white;
+  color:#CFCEE2;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
   }
 
   p {
-  color:white;
+  color:#CFCEE2;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
@@ -26,12 +26,12 @@ h1 {
   }
   
   a {
-  color:white;
+  color: #CFCEE2;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   }
   body {
-    background-color: #161B22;
+    background-color: #171623;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -40,50 +40,4 @@ h1 {
     padding: 0;
     }  
 
-    .downloads {
-      background-color: transparent;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-      border: none;
-      text-decoration: none;
-      padding: 12px 30px;
-      cursor: pointer;
-      font-size: 20px;
-      border-radius: 4px;
-      display: block;
-      margin: 20px auto;
-    }
-
-    .downloads:hover {
-      background-color: transparent;
-      box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8);
-    }
-    
-  /*minecraft ip*/
-  .container {
-    text-align: center;
-    background-color: transparent;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba 0, 0, 0, 0.1
-  }
-    .copy-btn {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 20px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-  }
-  
-  .copy-btn:hover {
-      background-color: #45a049;
-  }
-  
-  .message {
-      display: none;
-      color: green;
-      font-size: 16px;
-      margin-top: 10px;
-  }
+   

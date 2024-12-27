@@ -1,6 +1,6 @@
 /* Allgemeine Styles (Reset, Typografie, Farben) */
 h1 {
-    color:  white;
+    color:  #CFCEE2;
     text-align: left;
     padding-left: 60px;
     padding-top: 200px;
@@ -10,25 +10,25 @@ h1 {
   }
 .highlight1 {
   font-weight: bold;
-  color: #2dba4e;
+  color: #6160d9;
 }
 
   h2 {
-  color:white;
+  color:#CFCEE2;
   text-align: center;
   padding-top: 500px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 50px;
   }
   p {
-  color:white;
+  color:#CFCEE2;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   }
   
   a {
-  color:white;
+  color:#CFCEE2;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   }

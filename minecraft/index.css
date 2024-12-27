@@ -1,5 +1,5 @@
 h1 {
-    color:  white;
+    color:  #CFCEE2;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
@@ -7,17 +7,17 @@ h1 {
   }
   .highlight1 {
     font-weight: bold;
-    color: #2dba4e ;
+    color: #6160d9 ;
   }
   
   h2 {
-  color:white;
+  color:#CFCEE2;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
   }
   p {
-  color:white;
+  color:#CFCEE2;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
@@ -25,12 +25,12 @@ h1 {
   }
   
   a {
-  color:white;
+  color:#CFCEE2;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   }
   body {
-    background-color: #161B22;
+    background-color: #171623;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -40,8 +40,8 @@ h1 {
     }  
 
     .downloads {
-      background-color: transparent;
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+      background-color: #2B2B35;
+      box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
       border: none;
       text-decoration: none;
       padding: 12px 30px;
@@ -53,8 +53,8 @@ h1 {
     }
 
     .downloads:hover {
-      background-color: transparent;
-      box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+      background-color: #2B2B35;
+      box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
     }
     
   /*minecraft ip*/
