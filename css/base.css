@@ -89,3 +89,30 @@ body {
     font-size: 16px;
     margin-top: 10px;
 }
+
+
+/** donwload extend menu for minecraft */
+.extend-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.extend-button {
+  /* Style the button */
+}
+
+.extend-options {
+  display: none; /* Initially hide the options */
+  position: absolute;
+  /* Adjust top/left/right/bottom for positioning */
+  background-color: #f9f9f9;
+  /* Style the options container */
+}
+
+.option {
+  /* Style the individual options */
+}
+
+.extend-menu:hover .extend-options {
+  display: block; /* Show options on hover */
+}
