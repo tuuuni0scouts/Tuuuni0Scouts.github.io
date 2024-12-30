@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Markdown on GitHub Pages</title>
+</head>
+<body>
+    <div id="markdown-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.2/marked.min.js"></script>
+    <script>
+        fetch('/blog/Projektarbeit.md') 
+            .then(response => response.text())
+            .then(markdown => {
+                const html = marked(markdown);
+                document.getElementById('markdown-container').innerHTML = html;
+            });
+    </script>
+</body>
+</html>
