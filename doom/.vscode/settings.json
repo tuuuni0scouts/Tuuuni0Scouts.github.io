@@ -1,5 +1,0 @@
-{
-  "clangd.fallbackFlags": [
-    "-I${workspaceFolder}/emsdk/fastcomp/emscripten/system/include"
-  ]
-}
