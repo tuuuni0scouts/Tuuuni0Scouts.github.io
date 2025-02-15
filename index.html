@@ -12,33 +12,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <title>Main</title>
+
+
+    <script>
+        async function fetchIp() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                document.getElementById('ip-address').innerText = data.ip;
+            } catch (error) {
+                console.error('Error fetching IP address:', error);
+                document.getElementById('ip-address').innerText = 'Error fetching IP address';
+            }
+        }
+
+        window.onload = fetchIp;
+    </script>
+
+    
   </head>
   <body>
-    <h1>Start</h1>
-  <a href="/minecraft/" class="menu">
-    <img src="/images/icons/game.png" height="100" width="100">
-    Minecraft 
-  </a>
-  <a href="https://help.tuuuni.ch/de/submit" class="menu">
-    <img src="/images/icons/support.png" height="100" width="100">
-    Support
-  </a>
-  <a href="https://blog.tuuuni.ch/" class="menu">
-    <img src="/images/icons/" height="100" width="100">
-    Blog
-  </a>
-    <a href="/portfolio/" class="menu">
-      <img src="/images/icons/user.png" height="100" width="100">
-      Portfolio
-    </a>
-    <a href="https://tuuuni.diskstation.me" class="menu">
-      <img src="/images/icons/nas.png" height="100" width="100">
-      NAS
-    </a>
+    <div class="container">
+        <h1>Welcome <span id="ip-address">Loading...</span>!</h1>
+        <h2>🚧 Under Construction 🚧</h2>
+        <a href="/!/index.html" class="button">Home Page</a>
+    </div>
   </body>
   <footer>
-    <p>
-
-    </p>
+ 
   </footer>
 </html>
