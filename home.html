@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        h1 {
+            color: #CFCEE2;
+            text-align: center;
+            font-family: "Courier Prime", serif;
+            font-weight: 700;
+            font-size: 50px;
+        }
+
+        .highlight1 {
+            font-weight: bold;
+            color: #6160d9;
+        }
+
+        h2 {
+            color: #CFCEE2;
+            text-align: center;
+            font-family: "Courier Prime", serif;
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        p {
+            color: #CFCEE2;
+            text-align: center;
+            font-family: "Courier Prime", serif;
+            font-weight: 400;
+            font-size: 30px;
+        }
+
+        a {
+            color: #CFCEE2;
+            text-align: center;
+            font-family: "Courier Prime", serif;
+            font-weight: 400;
+        }
+
+        body {
+            background-color: #171623;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+        }
+
+        .downloads {
+            background-color: #2B2B35;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+            border: none;
+            text-decoration: none;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 4px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .downloads:hover {
+            background-color: #2B2B35;
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #search-container {
+            text-align: center; /* Center the search bar */
+            margin-top: 20px; /* Add some top margin */
+        }
+
+        #search-bar {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 50%; /* Adjust width as needed */
+            background-color: #2B2B35; /* Example background color */
+            color: #CFCEE2; /* Text color */
+        }
+
+        #search-bar:focus {
+            outline: none; /* Remove default outline on focus */
+            box-shadow: 0 0 5px rgba(97, 96, 217, 0.5); /* Example box shadow on focus */
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Home</h1>
+
+    <div id="search-container">
+        <form action="https://www.google.com/search" method="get" target="_blank">
+            <input type="text" id="search-bar" name="q" placeholder="Search Google...">
+            <input type="submit" style="display:none;"> </form>
+    </div>
+
+</body>
+</html>
