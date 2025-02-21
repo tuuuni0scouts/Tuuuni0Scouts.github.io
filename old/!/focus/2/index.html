@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #clock-container {
+            color: white;
+            font-family: monospace;
+            font-size: 3em;
+            text-align: center;
+        }
+
+        #clock {
+
+        }
+
+        #fullscreen-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s ease; /* Smooth transition */
+        }
+
+        body:hover #fullscreen-button { /* Show on body hover */
+            opacity: 1;
+        }
+
+        #fullscreen-button:hover {
+            background-color: rgba(0, 0, 0, 0.7); /* Darker on button hover */
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="clock-container">
+        <div id="clock"></div>
+    </div>
+
+    <button id="fullscreen-button">Enter Fullscreen</button>
+
+
+    
+
+</body>
+</html>

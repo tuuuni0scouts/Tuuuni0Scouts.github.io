@@ -1,0 +1,48 @@
+/* Allgemeine Styles (Reset, Typografie, Farben) */
+h1 {
+    color:  #CFCEE2;
+    text-align: left;
+    padding-left: 60px;
+    padding-top: 200px;
+    font-family: "Courier Prime", serif;
+    font-weight: 700;
+    font-size: 50px;
+  
+  }
+.highlight1 {
+  font-weight: bold;
+  color: #6160d9;
+}
+
+  h2 {
+  color:#CFCEE2;
+  text-align: center;
+  padding-top: 500px;
+  font-family: "Courier Prime", serif;
+  font-weight: 400;
+  font-size: 50px;
+  }
+  p {
+  color:#CFCEE2;
+  text-align: center;
+  font-family: "Courier Prime", serif;
+  font-weight: 400;
+  font-size: 20px;
+  }
+  
+  a {
+  color:#CFCEE2;
+  text-align: center;
+  font-family: "Courier Prime", serif;
+  font-weight: 400;
+  }
+  body {
+    background-color: #161B22;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    } 
+ 
