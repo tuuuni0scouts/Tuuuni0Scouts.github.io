@@ -25,22 +25,25 @@
 
     <style>
       h1 {
-    color:  #CFCEE2;
-    text-align: left;
-    padding-left: 60px;
-    padding-top: 200px;
-    font-family: "Courier Prime", serif;
-    font-weight: 700;
-    font-size: 50px; }
+        color:  #CFCEE2;
+        text-align: left;
+        padding-left: 60px;
+        padding-top: 200px;
+        font-family: "Courier Prime", serif;
+        font-weight: 700;
+        font-size: 50px;
+      }
   
-    .app-icons {
+      .app-icons {
         display: flex;
         justify-content: flex-start;
         padding-left: 60px;
-        padding-top: 20px;
+        padding-top: 60px;
       }
       .app-icons a {
         margin-right: 20px;
+        text-align: center; 
+        text-decoration: none;
       }
       .app-icons img {
         width: 80px; /* Scaled down width */
@@ -52,16 +55,32 @@
       .app-icons img:hover {
         transform: scale(1.1); /* Slightly enlarges the icon on hover */
       }
+
+      .app-icons span {
+        display: block; /* Ensure the text is below the icon */
+        margin-top: 5px; /* Add some space between the icon and the text */
+        font-family: "Courier Prime", serif; /* Match the font family */
+        font-size: 16px; /* Adjust the font size */
+      }
   
     </style>
   </head>
   <body>
-    <h1>Hallo, <span class="highlight1", id="ip-address">Loading...</span> </h1>
+    <h1>Hallo, <span class="highlight1" id="ip-address">Loading...</span> </h1>
   
     <div class="app-icons">
-      <a href="/minecraft/"><img src="/images/icons/minecraft.png" alt="Minecraft"></a>
-      <a href="/support/"><img src="/images/icons/support.png" alt="Support"></a>
-      <a href="page3.html"><img src="/images/icons/icon3.png" alt="Page 3"></a>
+      <a href="/minecraft/">
+        <img src="/images/icons/block.png" alt="Minecraft">
+        <span>Minecraft</span>
+      </a>
+      <a href="/support/">
+        <img src="/images/icons/support.png" alt="Support">
+        <span>Support</span>
+      </a>
+      <a href="https://marty-ch.quickconnect.to/">
+        <img src="/images/icons/cloud.png" alt="NAS">
+        <span>NAS</span>
+      </a>
     </div>
 
   </body>
