@@ -62,6 +62,33 @@
         font-family: "Courier Prime", serif; /* Match the font family */
         font-size: 16px; /* Adjust the font size */
       }
+
+      @media (max-width: 768px) {
+        h1 {
+          text-align: center;
+          padding-left: 0;
+          padding-top: 100px;
+          font-size: 40px;
+        }
+        .app-icons {
+          justify-content: center;
+          padding-left: 0;
+          padding-top: 30px;
+          flex-wrap: wrap; /* Allow wrapping of icons */
+        }
+        .app-icons a {
+          flex: 1 1 80px; /* Adjust flex-basis for smaller screens */
+          margin: 10px 5%; /* Add vertical margin and slight horizontal margin */
+        }
+        .app-icons img {
+          width: 60px; /* Smaller width for mobile */
+          height: 60px; /* Smaller height for mobile */
+        }
+        .app-icons span {
+          font-size: 14px; /* Smaller font size for mobile */
+        }
+      }
+  
   
     </style>
   </head>
