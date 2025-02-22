@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer</title>
+    <style>
+        .image-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pannable-image {
+            position: absolute;  /* Changed from relative */
+            max-width: 100%;
+            max-height: 100vh;
+            transform-origin: 0 0;  /* Changed to top-left corner */
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="/test.svg" class="pannable-image" alt="Chart">
+    </div>
+
+    <script>
+        const container = document.querySelector('.image-container');
+        const image = document.querySelector('.pannable-image');
+        let isPanning = false;
+        let startPos = { x: 0, y: 0 };
+        let currentPos = { x: 0, y: 0 };
+        let scale = 1;
+
+        // Prevent image dragging
+        image.addEventListener('dragstart', (e) => {
+            e.preventDefault();
+        });
+
+        // Initialize image position with centering
+        function centerImage() {
+            const rect = image.getBoundingClientRect();
+            currentPos.x = (container.clientWidth - rect.width) / 2;
+            currentPos.y = (container.clientHeight - rect.height) / 2;
+            image.style.transform = `translate(${currentPos.x}px, ${currentPos.y}px) scale(${scale})`;
+        }
+
+        // Wait for image to load before centering
+        image.onload = centerImage;
+
+        // Pan functionality
+        container.addEventListener('mousedown', (e) => {
+            e.preventDefault(); // Prevent default drag behavior
+            isPanning = true;
+            startPos = {
+                x: e.clientX - currentPos.x,
+                y: e.clientY - currentPos.y
+            };
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isPanning) return;
+            
+            currentPos = {
+                x: e.clientX - startPos.x,
+                y: e.clientY - startPos.y
+            };
+            
+            image.style.transform = `translate(${currentPos.x}px, ${currentPos.y}px) scale(${scale})`;
+        });
+
+        container.addEventListener('mouseup', () => {
+            isPanning = false;
+        });
+
+        // Add new variables for tracking mouse position
+        let mouseX = 0;
+        let mouseY = 0;
+
+        // Track mouse position
+        container.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Modified zoom functionality
+        container.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            
+            // Get container bounds and cursor position
+            const rect = container.getBoundingClientRect();
+            
+            // Calculate cursor position relative to the image
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Calculate where the cursor is on the image in scaled coordinates
+            const mouseXOnImage = (x - currentPos.x) / scale;
+            const mouseYOnImage = (y - currentPos.y) / scale;
+            
+            // Calculate new scale
+            const oldScale = scale;
+            scale *= e.deltaY > 0 ? 0.9 : 1.1;
+            scale = Math.min(Math.max(0.1, scale), 10);
+            
+            // Calculate new position to zoom into the cursor point
+            currentPos.x = x - mouseXOnImage * scale;
+            currentPos.y = y - mouseYOnImage * scale;
+            
+            // Apply transformation
+            requestAnimationFrame(() => {
+                image.style.transform = `translate(${currentPos.x}px, ${currentPos.y}px) scale(${scale})`;
+            });
+        });
+    </script>
+</body>
+</html>
