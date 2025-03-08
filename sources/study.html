@@ -5,118 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Viewer</title>
     <style>
-        .image-container {
-            width: 100%;
-            height: 100vh;
+        body {
+            margin: 0;
             overflow: hidden;
-            position: relative;
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        .pannable-image {
-            position: absolute;  /* Changed from relative */
+        .image-container {
+            width: 100vw;
+            height: 100vh;
+            touch-action: none;
+            position: relative;
+            overflow: hidden;
+        }
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+            user-select: none;
+            -webkit-user-drag: none;
             max-width: 100%;
-            max-height: 100vh;
-            transform-origin: 0 0;  /* Changed to top-left corner */
-            cursor: move;
+            max-height: 100%;
+            object-fit: contain;
         }
     </style>
 </head>
 <body>
     <div class="image-container">
-        <img src="/sources/Evolution.svg" class="pannable-image" alt="Chart">
+        <img src="/sources/Evolution.svg" alt="Zoomable image">
     </div>
 
     <script>
         const container = document.querySelector('.image-container');
-        const image = document.querySelector('.pannable-image');
+        const image = container.querySelector('img');
         let isPanning = false;
         let startPos = { x: 0, y: 0 };
         let currentPos = { x: 0, y: 0 };
         let scale = 1;
+        let initialDistance = 0;
+        let initialScale = 1;
 
-        // Prevent image dragging
-        image.addEventListener('dragstart', (e) => {
+        container.addEventListener('touchstart', (e) => {
             e.preventDefault();
+            if (e.touches.length === 2) {
+                initialDistance = getDistance(e.touches[0], e.touches[1]);
+                initialScale = scale;
+            } else if (e.touches.length === 1) {
+                isPanning = true;
+                startPos = {
+                    x: e.touches[0].clientX - currentPos.x,
+                    y: e.touches[0].clientY - currentPos.y
+                };
+            }
         });
 
-        // Initialize image position with centering
-        function centerImage() {
-            const rect = image.getBoundingClientRect();
-            currentPos.x = (container.clientWidth - rect.width) / 2;
-            currentPos.y = (container.clientHeight - rect.height) / 2;
-            image.style.transform = `translate(${currentPos.x}px, ${currentPos.y}px) scale(${scale})`;
-        }
-
-        // Wait for image to load before centering
-        image.onload = centerImage;
-
-        // Pan functionality
-        container.addEventListener('mousedown', (e) => {
-            e.preventDefault(); // Prevent default drag behavior
-            isPanning = true;
-            startPos = {
-                x: e.clientX - currentPos.x,
-                y: e.clientY - currentPos.y
-            };
+        container.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            if (e.touches.length === 2) {
+                const distance = getDistance(e.touches[0], e.touches[1]);
+                scale = Math.min(Math.max(0.1, (distance / initialDistance) * initialScale), 10);
+                updateTransform();
+            } else if (e.touches.length === 1 && isPanning) {
+                currentPos = {
+                    x: e.touches[0].clientX - startPos.x,
+                    y: e.touches[0].clientY - startPos.y
+                };
+                updateTransform();
+            }
         });
 
-        container.addEventListener('mousemove', (e) => {
-            if (!isPanning) return;
-            
-            currentPos = {
-                x: e.clientX - startPos.x,
-                y: e.clientY - startPos.y
-            };
-            
-            image.style.transform = `translate(${currentPos.x}px, ${currentPos.y}px) scale(${scale})`;
-        });
-
-        container.addEventListener('mouseup', () => {
+        container.addEventListener('touchend', (e) => {
+            e.preventDefault();
             isPanning = false;
         });
 
-        // Add new variables for tracking mouse position
-        let mouseX = 0;
-        let mouseY = 0;
+        function getDistance(touch1, touch2) {
+            const dx = touch1.clientX - touch2.clientX;
+            const dy = touch1.clientY - touch2.clientY;
+            return Math.sqrt(dx * dx + dy * dy);
+        }
 
-        // Track mouse position
-        container.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        // Modified zoom functionality
-        container.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            
-            // Get container bounds and cursor position
-            const rect = container.getBoundingClientRect();
-            
-            // Calculate cursor position relative to the image
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            // Calculate where the cursor is on the image in scaled coordinates
-            const mouseXOnImage = (x - currentPos.x) / scale;
-            const mouseYOnImage = (y - currentPos.y) / scale;
-            
-            // Calculate new scale
-            const oldScale = scale;
-            scale *= e.deltaY > 0 ? 0.9 : 1.1;
-            scale = Math.min(Math.max(0.1, scale), 10);
-            
-            // Calculate new position to zoom into the cursor point
-            currentPos.x = x - mouseXOnImage * scale;
-            currentPos.y = y - mouseYOnImage * scale;
-            
-            // Apply transformation
+        function updateTransform() {
             requestAnimationFrame(() => {
-                image.style.transform = `translate(${currentPos.x}px, ${currentPos.y}px) scale(${scale})`;
+                image.style.transform = `translate(calc(-50% + ${currentPos.x}px), calc(-50% + ${currentPos.y}px)) scale(${scale})`;
             });
-        });
+        }
     </script>
 </body>
 </html>

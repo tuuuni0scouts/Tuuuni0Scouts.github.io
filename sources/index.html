@@ -12,9 +12,52 @@
   </head>
   <body>
     <h1>Sources:</h1>
-    <a href="/sources/study.html"; class="downloads">Evolution Biologie</a>
-    <a href="/sources/study2.html"; class="downloads">Evolution Biologie 2</a>
-    <a href="/sources/doom.pdf"; class="downloads">Doom</a>
+    <div class="search-container">
+      <input type="text" id="searchBar" onkeyup="filterFiles()" placeholder="Search for files...">
+    </div>
+    <div id="fileList"></div>
+
+    <script>
+      // Function to filter files based on search input
+      function filterFiles() {
+        let input = document.getElementById('searchBar').value.toLowerCase();
+        let files = document.getElementsByClassName('downloads');
+        
+        for (let i = 0; i < files.length; i++) {
+          let txtValue = files[i].textContent || files[i].innerText;
+          if (txtValue.toLowerCase().indexOf(input) > -1) {
+            files[i].style.display = "";
+          } else {
+            files[i].style.display = "none";
+          }
+        }
+      }
+
+      // Function to load and sort files
+      async function loadFiles() {
+        try {
+          const response = await fetch('/api/files');
+          const files = await response.json();
+          
+          // Sort files by last modified date
+          files.sort((a, b) => b.modifiedDate - a.modifiedDate);
+          
+          const fileList = document.getElementById('fileList');
+          files.forEach(file => {
+            const link = document.createElement('a');
+            link.href = '/sources/' + file.name;
+            link.className = 'downloads';
+            link.textContent = file.name.replace(/\.[^/.]+$/, '');
+            fileList.appendChild(link);
+          });
+        } catch (error) {
+          console.error('Error loading files:', error);
+        }
+      }
+
+      // Load files when page loads
+      window.onload = loadFiles;
+    </script>
     <p>Text Herre</p>
 
   </body>
